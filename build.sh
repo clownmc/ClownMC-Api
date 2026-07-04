@@ -2,6 +2,6 @@
 set -e
 
 echo "Starting build..."
-./gradlew clean build shadowJar
+./gradlew clean shadowJar
 
 echo "Build completed!"
