@@ -1,0 +1,8 @@
+api:
+  port: 25566
+
+  get_tps:
+    enabled: true
+
+  get_player_list:
+    enabled: true

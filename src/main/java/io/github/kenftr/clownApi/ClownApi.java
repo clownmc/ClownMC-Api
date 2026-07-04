@@ -10,6 +10,16 @@ public final class ClownApi extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
+        saveDefaultConfig();
+        int port = getConfig().getInt("api.port");
+        boolean tpsEnabled = getConfig().getBoolean("api.get_tps.enabled");
+        boolean playerListEnabled = getConfig().getBoolean("api.get_player_list.enabled");
+
+
+        port(port);
+
+
         GetTpsTask getTpsTask = new GetTpsTask(this);
         getTpsTask.startTask();
 
@@ -17,8 +27,12 @@ public final class ClownApi extends JavaPlugin {
         getPlayerListTask.start();
 
         new Thread(() -> {
-           new GetTps(getTpsTask).register();
-           new GetPlayerList(getPlayerListTask).register();
+            if (tpsEnabled) {
+                new GetTps(getTpsTask).register();
+            }
+            if (playerListEnabled) {
+                new GetPlayerList(getPlayerListTask).register();
+            }
         }).start();
         System.out.println("ClownApi Start");
     }
