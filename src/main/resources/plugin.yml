@@ -6,3 +6,4 @@ main: io.github.kenftr.clownApi.ClownApi
 api-version: '26.1'
 
 authors: [ kenftr ]
+load: POSTWORLD

@@ -8,7 +8,7 @@ public class GetTpsTask {
     private final JavaPlugin plugin;
 
     private long lastTime = -1;
-    private double tps = 20.0;
+    private volatile double tps = 20.0;
 
     public GetTpsTask(JavaPlugin plugin) {
         this.plugin = plugin;

@@ -20,7 +20,7 @@ cd ClownMC-Api
 
 ```bash
 chmod +x gradlew
-./gradlew clean build shadowJar
+./gradlew clean shadowJar
 ```
 
 Or simply run:
